@@ -1,0 +1,15 @@
+{
+  "name": "autoscale",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ms-rest-azure": "^2.5.7",
+    "request": "^2.88.0"
+  }
+}
