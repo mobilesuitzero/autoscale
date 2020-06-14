@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: RunARMTTKTests@1
+  inputs:
+    templatelocation: '$(System.DefaultWorkingDirectory)\templates\'
+    resultLocation: '$(System.DefaultWorkingDirectory)\results'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: '$(System.DefaultWorkingDirectory)\results\*-armttk.xml'
+  condition: always()
+
+
