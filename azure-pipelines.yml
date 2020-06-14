@@ -1,4 +1,16 @@
 # Starter pipeline
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'PAYG-DevOps(4f27b38c-ad3f-43d8-a9a3-01182e5e2f9a)'
+    subscriptionId: '4f27b38c-ad3f-43d8-a9a3-01182e5e2f9a'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'dchaodevop'
+    location: 'West US'
+    templateLocation: 'Linked artifact'
+    csmFile: 'mainTemplate.json'
+    deploymentMode: 'Complete'
+    deploymentName: 'dchaodevop'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
